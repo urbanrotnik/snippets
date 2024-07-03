@@ -1,0 +1,19 @@
+<div class="myparent" data-controller="parent" data-parent-child-outlet="#mychild">
+  <label for="dateInput">Date for parent</label>
+  <input type="date"
+         data-parent-target="dateInput"
+         data-action="parent#saveDateForParent"
+         value="2024-01-01">
+  <br>
+  <button type="button" data-action="parent#updateChild">Save to child</button>
+  <br>
+
+  <div id="mychild" data-controller="child" data-child-parent-outlet=".myparent" class="mt-3">
+    <label for="dateInput">Date for child</label>
+    <input type="date" value="2024-02-02"
+           data-action="child#saveDateForChild"
+           data-child-target="dateInput">
+  </div>
+</div>
+
+
